@@ -1,4 +1,3 @@
-from types import DynamicClassAttribute
 import math
 
 class Pessoa:

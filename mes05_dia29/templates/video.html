@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo sobre Rotas Flask</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Vídeo sobre Rotas Flask</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/contato">Contato</a>
+        <a href="/video">Vídeo Flask</a>
+    </nav>
+
+    <main class="video-container">
+
+        <h2>Aprendendo Rotas no Flask</h2>
+
+        <p>
+            Clique na imagem abaixo para assistir ao vídeo.
+        </p>
+
+        <a href="https://google.com">
+            <img 
+                src="{{ url_for('static', filename='img/video.png') }}" 
+                alt="Vídeo Flask" 
+                class="imagem-video"
+            >
+        </a>
+
+    </main>
+
+</body>
+</html>

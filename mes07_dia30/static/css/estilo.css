@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f2f4f7;
+    color: #202124;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    padding: 20px;
+    background: #173b65;
+    color: white;
+}
+
+header h1 {
+    margin: 0 0 15px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.painel {
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #aab0b6;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: #173b65;
+    outline: 2px solid rgba(23, 59, 101, 0.2);
+}
+
+.erro {
+    display: block;
+    margin-top: 5px;
+    color: #b3261e;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button,
+.botao-link {
+    display: inline-block;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 5px;
+    background: #173b65;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+button:hover,
+.botao-link:hover {
+    background: #0f2948;
+}
+
+.cabecalho-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    border: 1px solid #d3d7dc;
+    text-align: left;
+}
+
+th {
+    background: #e7edf4;
+}
+
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.aviso {
+    padding: 15px;
+    background: #fff4ce;
+    border-left: 5px solid #d69e00;
+}
+
+@media (max-width: 700px) {
+    .cabecalho-lista {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 7px;
+    }
+}

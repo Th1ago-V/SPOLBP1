@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block titulo %}
+            Cadastro de Alunos
+        {% endblock %}
+    </title>
+
+    <link 
+        rel="stylesheet" 
+        href="{{ url_for('static', filename='css/estilo.css') }}"
+    >
+</head>
+<body>
+    <header>
+        <h1>Sistema de Cadastro de Alunos</h1>
+
+        <nav>
+            <a href="{{ url_for('aluno_controller.formulario') }}">
+                Novo aluno
+            </a>
+
+            <a href="{{ url_for('aluno_controller.listar') }}">
+                Lista de alunos
+            </a>
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block conteudo %}
+        {% endblock %}
+    </main>
+</body>
+</html>

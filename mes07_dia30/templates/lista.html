@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Alunos cadastrados
+{% endblock %}
+
+{% block conteudo %}
+    <section class="painel">
+        <div class="cabecalho-lista">
+            <h2>Alunos cadastrados</h2>
+
+            <a 
+                class="botao-link" 
+                href="{{ url_for('aluno_controller.formulario') }}"
+            >
+                Novo cadastro
+            </a>
+        </div>
+
+        {% if alunos %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Idade</th>
+                        <th>Curso</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for aluno in alunos %}
+                        <tr>
+                            <td>{{ aluno.nome }}</td>
+                            <td>{{ aluno.email }}</td>
+                            <td>{{ aluno.idade }}</td>
+                            <td>{{ aluno.curso }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="aviso">
+                Nenhum aluno foi cadastrado.
+            </p>
+        {% endif %}
+    </section>
+{% endblock %}

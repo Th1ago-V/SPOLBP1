@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    Novo aluno
+{% endblock %}
+
+{% block conteudo %}
+    <section class="painel">
+        <h2>Cadastro de aluno</h2>
+
+        <p>
+            Preencha os dados abaixo. Todos os campos são obrigatórios.
+        </p>
+
+        <form method="POST" novalidate>
+            <div class="campo">
+                <label for="nome">Nome completo</label>
+
+                <input 
+                    type="text" 
+                    id="nome" 
+                    name="nome" 
+                    value="{{ dados.nome }}"
+                >
+
+                {% if erros.nome %}
+                    <span class="erro">
+                        {{ erros.nome }}
+                    </span>
+                {% endif %}
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail</label>
+
+                <input 
+                    type="text" 
+                    id="email" 
+                    name="email" 
+                    value="{{ dados.email }}"
+                >
+
+                {% if erros.email %}
+                    <span class="erro">
+                        {{ erros.email }}
+                    </span>
+                {% endif %}
+            </div>
+
+            <div class="campo">
+                <label for="idade">Idade</label>
+
+                <input 
+                    type="text" 
+                    id="idade" 
+                    name="idade" 
+                    value="{{ dados.idade }}"
+                >
+
+                {% if erros.idade %}
+                    <span class="erro">
+                        {{ erros.idade }}
+                    </span>
+                {% endif %}
+            </div>
+
+            <div class="campo">
+                <label for="curso">Curso</label>
+
+                <select id="curso" name="curso">
+                    <option value="">
+                        Selecione
+                    </option>
+
+                    <option 
+                        value="Informática"
+                        {% if dados.curso == "Informática" %}
+                            selected
+                        {% endif %}
+                    >
+                        Informática
+                    </option>
+
+                    <option 
+                        value="Administração"
+                        {% if dados.curso == "Administração" %}
+                            selected
+                        {% endif %}
+                    >
+                        Administração
+                    </option>
+
+                    <option 
+                        value="Eletrônica"
+                        {% if dados.curso == "Eletrônica" %}
+                            selected
+                        {% endif %}
+                    >
+                        Eletrônica
+                    </option>
+
+                    <option 
+                        value="Mecânica"
+                        {% if dados.curso == "Mecânica" %}
+                            selected
+                        {% endif %}
+                    >
+                        Mecânica
+                    </option>
+                </select>
+
+                {% if erros.curso %}
+                    <span class="erro">
+                        {{ erros.curso }}
+                    </span>
+                {% endif %}
+            </div>
+
+            <button type="submit">
+                Cadastrar aluno
+            </button>
+        </form>
+    </section>
+{% endblock %}
